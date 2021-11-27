@@ -23,3 +23,8 @@ module.exports = (db) => {
   });
   return router;
 };
+// user_access route
+// organizations routes
+// users routes
+// credentials routes
+// np
