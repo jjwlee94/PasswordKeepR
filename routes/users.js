@@ -23,3 +23,12 @@ module.exports = (db) => {
   });
   return router;
 };
+// user_access route
+// organizations routes
+// users routes
+// credentials routes
+// np
+router.get("/register", (req, res) => {
+
+  res.render("/register")
+});
