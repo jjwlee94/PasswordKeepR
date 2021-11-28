@@ -63,6 +63,7 @@ app.get("/register", (req, res) => {
 //need to create index.ejs
 app.post("/logout", (req, res)=>{
   res.render ('index')
+});
 
 // Need to separate into route files
 app.get("/passwords/create", (req, res) => {
