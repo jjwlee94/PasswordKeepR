@@ -28,3 +28,7 @@ module.exports = (db) => {
 // users routes
 // credentials routes
 // np
+router.get("/register", (req, res) => {
+
+  res.render("/register")
+});
