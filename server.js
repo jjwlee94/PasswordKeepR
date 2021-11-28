@@ -58,7 +58,7 @@ app.get("/register", (req, res) => {
 });
 
 // Need to separate into route files
-app.get("/create", (req, res) => {
+app.get("/passwords/create", (req, res) => {
   res.render("password_create");
 });
 
