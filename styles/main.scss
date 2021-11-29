@@ -2,108 +2,144 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
 }
 
-.container {
+body#index {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-style: solid;
-  padding: 2rem;
-  margin-top: 5rem;
-  width: 50%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .about-container {
+      border-style: solid;
+      padding: 2rem;
+      width: 100%;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-style: solid;
+      padding: 2rem;
+      width: 100%;
+    }
+    .generate-password-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-style: solid;
+      padding: 2rem;
+      width: 100%;
+    }
+  }
 }
 
-.h1 {
-  display: flex;
-  justify-content: center;
-}
+body#password-create {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    padding: 2rem;
+    margin-top: 5rem;
+    width: 50%;
+  }
 
-.password-display {
-  color: lightgray;
-}
+  .h1 {
+    display: flex;
+    justify-content: center;
+  }
 
-form#passwordGeneratorForm {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  .password-display {
+    color: lightgray;
+  }
 
-.website-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+  form#passwordGeneratorForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-input#url {
-  width: 300px;
-}
+  .website-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 
-.categories {
-  width: 125px;
-}
+  input#url {
+    width: 300px;
+  }
 
-input#includeUppercase {
-  margin-right: 0.5rem;
-}
+  .categories {
+    width: 125px;
+  }
 
-input#includeNumbers {
-  margin-right: 0.5rem;
-}
+  input#includeUppercase {
+    margin-right: 0.5rem;
+  }
 
-input#includeSymbols {
-  margin-right: 0.5rem;
-}
+  input#includeNumbers {
+    margin-right: 0.5rem;
+  }
 
-.password-length-requirements {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+  input#includeSymbols {
+    margin-right: 0.5rem;
+  }
 
-.password-characters {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  .password-length-requirements {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 
-.character-amount-number {
-  margin-right: 0.5rem;
-  margin-bottom: 0;
-}
+  .password-characters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-label {
-  display: flex;
-  margin-bottom: 0.5rem;
-  align-items: center;
-}
+  .character-amount-number {
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
 
-.character-amount-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  label {
+    display: flex;
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
 
-input#passwordLengthRange {
-  margin-right: 1rem;
-}
+  .character-amount-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-input#passwordLengthNumber {
-  height: min-content;
-}
+  input#passwordLengthRange {
+    margin-right: 1rem;
+  }
 
-.password-requirements {
-  display: flex;
-  flex-direction: column;
-}
+  input#passwordLengthNumber {
+    height: min-content;
+  }
 
-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  .password-requirements {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button#submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
