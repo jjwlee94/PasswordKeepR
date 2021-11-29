@@ -8,5 +8,5 @@ INSERT INTO organizations (id, name) VALUES
 (7, 'Twitter'),
 (8, 'Reddit'),
 (9, 'Instagram'),
-(10, 'Staples')
+(10, 'Staples');
 
