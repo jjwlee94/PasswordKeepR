@@ -1,6 +1,12 @@
-INSERT INTO organizations (name, emaiL, password, admin)
-VALUES ('Group 5', 'group5@example.com', 'password', true),
-('Alice', 'alice@example.com', 'password', false)
-('Bob', 'bob@example.com', 'password', false)
-('Cindy', 'cindy@example.com', 'password', false)
-('David', 'david@example.com', 'password', false);
+INSERT INTO organizations (id, name) VALUES
+(1, 'Github'),
+(2, 'Facebook'),
+(3, 'Gmail'),
+(4, 'Wealthsimple'),
+(5, 'Youtube'),
+(6, 'T.D'),
+(7, 'Twitter'),
+(8, 'Reddit'),
+(9, 'Instagram'),
+(10, 'Staples')
+
