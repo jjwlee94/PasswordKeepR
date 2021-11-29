@@ -1,7 +1,14 @@
+header {
+  .navbar-brand {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 150%;
+  }
+
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
 body {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 .container {
@@ -9,8 +16,9 @@ body {
   flex-direction: column;
   align-items: center;
   border-style: solid;
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  width: 50%;
 }
 
 .h1 {
@@ -18,7 +26,93 @@ body {
   justify-content: center;
 }
 
-div {
+.password-display {
+  color: lightgray;
+}
+
+form#passwordGeneratorForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.website-info {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+input#url {
+  width: 300px;
+}
+
+.categories {
+  width: 125px;
+}
+
+input#includeUppercase {
+  margin-right: 0.5rem;
+}
+
+input#includeNumbers {
+  margin-right: 0.5rem;
+}
+
+input#includeSymbols {
+  margin-right: 0.5rem;
+}
+
+.password-length-requirements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.password-characters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.character-amount-number {
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
+label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.character-amount-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input#passwordLengthRange {
+  margin-right: 1rem;
+}
+
+input#passwordLengthNumber {
+  height: min-content;
+}
+
+.password-requirements {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
