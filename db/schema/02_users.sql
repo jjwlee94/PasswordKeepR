@@ -5,6 +5,6 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR (255) NOT NULL,
   password VARCHAR (255) NOT NULL,
-  organization_id INTEGER REFERENCES organization(id) ON DELETE CASCADE,
-  admin BOOLEAN NOT NULL DEFAULT FALSE,
+  organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE,
+  admin BOOLEAN NOT NULL DEFAULT FALSE
 );

@@ -24,6 +24,9 @@ module.exports = (db) => {
   return router;
 };
 // user_access route
+router.get("/login", (req,res) => {
+  res.render("/login")
+});
 // organizations routes
 // users routes
 // credentials routes
