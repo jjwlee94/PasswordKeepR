@@ -1,5 +1,7 @@
 -- Drop and recreate Users table (Example)
 
+
+
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -8,3 +10,5 @@ CREATE TABLE users (
  password VARCHAR (255) NOT NULL,
  organization_id INTEGER REFERENCES organization(id) ON DELETE CASCADE
 );
+
+
