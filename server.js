@@ -36,11 +36,19 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const createPasswordRouter = require("./routes/create-password-router");
+const indexRouter = require("./routes/index");
+const registerRouter = require("./routes/register");
+const loginRouter = require("./routes/login");
+const logoutRouter = require("./routes/logout");
+const createPasswordRouter = require("./routes/create-password");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
+app.use("/", indexRouter);
+app.use("/register", registerRouter);
+app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
 
 // Note: mount other resources here, using the same pattern above
@@ -48,22 +56,6 @@ app.use("/passwords/create", createPasswordRouter);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.get("/register", (req, res) => {
-  res.render("register");
-});
-//need to create index.ejs
-app.post("/logout", (req, res) => {
-  res.render("index");
-});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
