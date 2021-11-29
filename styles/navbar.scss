@@ -1,0 +1,17 @@
+header {
+  font-family: "Open Sans Condensed", sans-serif;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 80px;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    color: #fff;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 150%;
+  }
+}
