@@ -2,6 +2,8 @@ const express = require("express");
 const dbFns = require("../db/helpers");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const bodyParser = require("body-parser");
+const cookieSession = require("cookie-session");
 
 module.exports = (db) => {
   const addUser =  function(users) {
@@ -121,3 +123,23 @@ return router;
 // return router
 
 // }
+
+
+
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["key"],
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
+
+// GET requests
+
+// Renders Login page
+
+module.exports = router;
+

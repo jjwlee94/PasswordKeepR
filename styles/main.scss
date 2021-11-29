@@ -1,17 +1,118 @@
+header {
+  .navbar-brand {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 150%;
+  }
+
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
 body {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  padding: 2rem;
+  margin-top: 5rem;
+  width: 50%;
+}
+
+.h1 {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
 
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+.password-display {
+  color: lightgray;
+}
+
+form#passwordGeneratorForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.website-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+input#url {
+  width: 300px;
+}
+
+.categories {
+  width: 125px;
+}
+
+input#includeUppercase {
+  margin-right: 0.5rem;
+}
+
+input#includeNumbers {
+  margin-right: 0.5rem;
+}
+
+input#includeSymbols {
+  margin-right: 0.5rem;
+}
+
+.password-length-requirements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.password-characters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.character-amount-number {
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
+label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.character-amount-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input#passwordLengthRange {
+  margin-right: 1rem;
+}
+
+input#passwordLengthNumber {
+  height: min-content;
+}
+
+.password-requirements {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
