@@ -41,7 +41,8 @@ const indexRouter = require("./routes/index");
 const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
-const passwordsRouter = require("./routes/create-password");
+const createPasswordRouter = require("./routes/create-password");
+const passwordForOrganization = require("./routes/pass:ID");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -50,7 +51,8 @@ app.use("/", indexRouter);
 app.use("/register", registerRouter(db));
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
-app.use("/passwords", passwordsRouter);
+app.use("/passwords/create", createPasswordRouter);
+app.use("/passwords", passwordForOrganization(db));
 
 // Note: mount other resources here, using the same pattern above
 
