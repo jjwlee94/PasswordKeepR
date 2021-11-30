@@ -13,6 +13,7 @@ const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
+console.log("connected to the db")
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -42,6 +43,8 @@ const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const createPasswordRouter = require("./routes/create-password");
 
+
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -50,6 +53,7 @@ app.use("/register", registerRouter(db));
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
+
 
 // Note: mount other resources here, using the same pattern above
 
