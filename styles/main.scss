@@ -1,11 +1,11 @@
 body {
   font-family: "Open Sans Condensed", sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
 }
 
 body#index {
   display: flex;
   flex-direction: column;
-  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
 
   .container {
     display: flex;
@@ -52,6 +52,7 @@ body#index {
 
 body#password-create {
   .container {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
