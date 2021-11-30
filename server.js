@@ -51,7 +51,7 @@ const createPasswordRouter = require("./routes/create-password");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/", indexRouter);
-app.use("/register", registerRouter);
+app.use("/register", registerRouter(db));
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
