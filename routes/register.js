@@ -31,9 +31,6 @@ module.exports = (db) => {
   };
 
   // GET ROUTE
-  router.get("/", (req, res) => {
-    res.render("register");
-  });
   // POST ROUTE
   router.post("/", (req, res) => {
     const newUser = req.body;
