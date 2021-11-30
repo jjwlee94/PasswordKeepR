@@ -42,7 +42,7 @@ const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const createPasswordRouter = require("./routes/create-password");
-
+const passwordForOrganization = require("./routes/pass:ID")
 
 
 // Mount all resource routes
@@ -53,7 +53,7 @@ app.use("/register", registerRouter(db));
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
-
+app.use("/passwords", passwordForOrganization(db))
 
 // Note: mount other resources here, using the same pattern above
 
