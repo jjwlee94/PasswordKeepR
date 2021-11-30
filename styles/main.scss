@@ -31,21 +31,33 @@ body#index {
       padding: 2rem;
       width: 100%;
     }
+
     .image-container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      border-style: solid;
-      padding: 2rem;
+      align-items: center;
+      // border-style: solid;
+      padding: 1rem;
       width: 100%;
     }
+
+    img {
+      width: 90%;
+      height: 90%;
+    }
+
     .generate-password-container {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      border-style: solid;
-      padding: 2rem;
+      align-items: center;
       width: 100%;
+    }
+
+    .image-password-generator {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
   }
 }
