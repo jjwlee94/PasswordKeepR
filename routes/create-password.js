@@ -17,13 +17,13 @@ app.use(
 // GET requests
 
 // Renders Create New Password page
-router.get("/create", (req, res) => {
+router.get("/", (req, res) => {
   res.render("password_create");
   return router;
 });
 
 // POST requests
-router.post("/create", (req, res) => {
+router.post("/", (req, res) => {
   res.redirect("/passwords");
   return router;
 });
