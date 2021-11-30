@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 });
 // Renders passwords page
 router.get("/passwords", (req, res) => {
-  res.render("password_all");
+  res.render("user_interface");
 });
 
 module.exports = router;

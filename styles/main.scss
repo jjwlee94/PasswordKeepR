@@ -1,6 +1,12 @@
 body {
   font-family: "Open Sans Condensed", sans-serif;
   background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+
+  .alert-danger {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 body#index {
