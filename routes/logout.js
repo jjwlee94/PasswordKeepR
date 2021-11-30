@@ -1,3 +1,5 @@
+// We can ignore this page since we don't need to implement this function
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");

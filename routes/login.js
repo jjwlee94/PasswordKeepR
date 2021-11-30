@@ -21,9 +21,8 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
-router.post("/login", (req,res) => {
-
-  res.render("Hello!")
+router.post("/", (req, res) => {
+  res.redirect("/passwords");
 });
 
 module.exports = router;

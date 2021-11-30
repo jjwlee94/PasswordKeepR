@@ -1,0 +1,19 @@
+header {
+  font-family: "Open Sans Condensed", sans-serif;
+  background-color: #3264a1;
+  background-image: url("https://www.transparenttextures.com/patterns/stressed-linen.png");
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 80px;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    color: #ffffff;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 150%;
+  }
+}
