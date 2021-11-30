@@ -9,4 +9,3 @@ INSERT INTO organizations (id, name) VALUES
 (8, 'Reddit'),
 (9, 'Instagram'),
 (10, 'Staples');
-

@@ -1,8 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-const users = require("../db/helpers");
-const { emptyQuery } = require("pg-protocol/dist/messages");
 
 const app = express();
 const router = express.Router();
@@ -19,17 +17,15 @@ app.use(
 // GET requests
 
 // Renders Create New Password page
-router.get("/", (req, res) => {
-  const templateVars = {
-    user: users[req.body.email],
-  };
-  res.render("password_create", templateVars);
+router.get("/create", (req, res) => {
+  res.render("password_create");
   return router;
 });
 
 // POST requests
-router.post("/", (req, res) => {
-  res.redirect("/");
+router.post("/create", (req, res) => {
+  res.redirect("/passwords");
+  return router;
 });
 
 module.exports = router;
