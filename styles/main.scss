@@ -80,10 +80,13 @@ body#password-create {
   .website-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .website-url {
+    margin-right: 9.5rem;
   }
 
   input#url {
@@ -110,10 +113,11 @@ body#password-create {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .password-characters {
