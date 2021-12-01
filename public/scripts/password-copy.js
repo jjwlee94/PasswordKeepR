@@ -1,5 +1,8 @@
 // Function to copy password
-function copyPassword() {
-  const copyText = document.getElementById("myInput");
-  navigator.clipboard.writeText(copyText.value);
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
 }
