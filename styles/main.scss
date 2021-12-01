@@ -16,6 +16,11 @@ body#login {
     align-items: center;
     padding: 8rem;
   }
+  form.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 body#index {
