@@ -1,6 +1,7 @@
 const { Pool } = require("pg");
+const db = require("../server");
 
-module.exports = (db) => {
+// module.exports = (db) => {
   const addUser = function (users, db) {
     const queryString = `
     INSERT INTO users (name, email, password, organization_id, admin)
@@ -46,6 +47,33 @@ module.exports = (db) => {
     });
   };
 
+  const getUserWithOrgId = function(id) {
+
+    return db
+      .query('SELECT * FROM passwords WHERE organization_id = $1', [id])
+      .then((result) => {
+        console.log("results----->",result.rows)
+        return result.rows})
+      .catch((error) => {
+        console.log("error------->", error)
+        return error;
+      });
+  };
+
+  const getUserWithId = function(id) {
+
+    return db
+      .query('SELECT * FROM passwords WHERE user_id = $1', [id])
+      .then((result) => {
+        console.log("results----->",result.rows)
+        return result.rows})
+      .catch((error) => {
+        console.log("error------->", error)
+        return error;
+      });
+  };
+
+
   // const addPassword = function (passwords, db) {
   //   const queryString = `
   //   INSERT INTO passwords (user_id, website_url, website_username, website_password, category_id, organization_id)
@@ -70,12 +98,14 @@ module.exports = (db) => {
   // };
 
   module.exports = {
-    getUserByEmail,
+    // getUserByEmail,
     users,
-    createUserAccount,
-    verifyRegisterInfo,
+    // createUserAccount,
+    // verifyRegisterInfo,
     verifyEmail,
     addUser,
+    getUserWithOrgId,
+    getUserWithId
     // addPassword,
   };
-};
+// };

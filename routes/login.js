@@ -1,10 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
+const { getUserWithOrgId } = require("../db/helpers");
 
 const app = express();
 const router = express.Router();
-
+const { Pool } = require("pg");
+const dbParams = require("../lib/db");
+const db = new Pool(dbParams);
+db.connect();
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(
 //   cookieSession({
@@ -17,22 +21,16 @@ const router = express.Router();
 // GET requests
 
 // Renders Login page
+
 router.get("/", (req, res) => {
   res.render("login");
 });
 
-// router.get("/:id", (req, res) => {
-//   const id = req.params.id;
-//   console.log("id--------->", id);
-//   // req.session = null;
-//   // req.session.user_id = id;
 
-//   res.redirect("/passwords");
-// });
 
 router.post("/", (req, res) => {
   const id = req.params.id;
-  console.log("id--------->", id);
+
   res.redirect("/passwords");
 });
 

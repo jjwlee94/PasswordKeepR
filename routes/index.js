@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-
+const {getUserWithId} =  require("../db/helpers");
 const app = express();
 const router = express.Router();
 
@@ -22,13 +22,20 @@ router.get("/", (req, res) => {
 
 // Renders passwords page
 router.get("/passwords", (req, res) => {
-  const templateVars = {
-    url: "url",
-    username: "username",
-    password: "password",
-    category: "category",
-  };
-  res.render("password_all", templateVars);
+  getUserWithId("1")
+  .then((result) => {
+
+    const templateVars = {
+      url: "url",
+      username: "username",
+      password: "password",
+      category: "category",
+    };
+  return templateVars
+  })
+    .then((templateVars)=>{
+     return res.render("password_all", templateVars);
+    })
   return router;
 });
 
