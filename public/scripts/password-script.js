@@ -6,7 +6,7 @@ $(document).ready(function () {
   const includeNumbersElement = document.getElementById("includeNumbers");
   const includeSymbolsElement = document.getElementById("includeSymbols");
   const form = document.getElementById("passwordGeneratorForm");
-  const passwordDisplay = document.getElementById("passwordDisplay");
+  // const passwordDisplay = document.getElementById("passwordDisplay");
 
   // Synchronize range and number-input values on input
   passwordLengthNumber.addEventListener("input", syncPasswordLength);
@@ -57,11 +57,10 @@ $(document).ready(function () {
     return passwordCharacters.join("");
   };
 
-  generatePassword();
+  // generatePassword();
 
   // Function to display generated password on submit
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", function () {
     const passwordLength = passwordLengthNumber.value;
     const includeUppercase = includeUppercaseElement.checked;
     const includeNumbers = includeNumbersElement.checked;
@@ -72,6 +71,17 @@ $(document).ready(function () {
       includeNumbers,
       includeSymbols
     );
-    passwordDisplay.innerText = password;
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/password",
+    //   data: {
+    //     url: req.body.website_url,
+    //     username: req.body.website_username,
+    //     password: password,
+    //     category: req.body.category_id,
+    //   },
+    // });
+    // passwordDisplay.innerText = password;
+    console.log(password);
   });
 });
