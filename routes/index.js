@@ -18,7 +18,6 @@ app.use(
 // Renders homepage
 router.get("/", (req, res) => {
   res.render("index");
-  return router;
 });
 
 // Renders passwords page
@@ -41,7 +40,6 @@ router.post("/passwords", (req, res) => {
     password: "password",
     category: req.body.category_id,
   };
-
   res.render("password_all", templateVars);
   return router;
 });

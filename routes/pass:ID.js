@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+
 const getEmailUserPass = (organization_id,db) => {
   return db.query(`SELECT website_url, website_username, website_password FROM passwords WHERE organization_id =$1`,[organization_id])
     .then((result) => {
       return result.rows;
     });
 };
+
 
 // GET email, username and password;
 module.exports = (db) => {
@@ -22,3 +24,4 @@ module.exports = (db) => {
   });
   return router;
 };
+
