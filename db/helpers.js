@@ -1,6 +1,17 @@
 const { Pool } = require("pg");
 
 module.exports = (db) => {
+  const verifyEmail = function (email) {
+    const emailQuery = `SELECT * FROM users WHERE email = $ 1`;
+    return db
+      .query(emailQuery, [email])
+      .then((response) => {
+        return response.rows[0];
+      })
+      .catch((err) => {
+        return console.log("query error:", err);
+      });
+  };
   const addUser = function (users, db) {
     const queryString = `
     INSERT INTO users (name, email, password, organization_id, admin)

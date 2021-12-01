@@ -17,12 +17,17 @@ app.use(
 
 // Renders homepage
 router.get("/", (req, res) => {
-  res.render("index");
+  const templateVars = {
+    user: req.session.user_id
+
+  }
+  res.render("index", templateVars);
 });
 
 // Renders passwords page
 router.get("/passwords", (req, res) => {
   const templateVars = {
+    user: req.session.user_id,
     url: "url",
     username: "username",
     password: "password",
@@ -35,6 +40,7 @@ router.get("/passwords", (req, res) => {
 // Renders updated passwords page
 router.post("/passwords", (req, res) => {
   const templateVars = {
+    user : req.session.user_id,
     url: req.body.website_url,
     username: req.body.website_username,
     password: "password",

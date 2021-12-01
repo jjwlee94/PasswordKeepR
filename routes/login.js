@@ -1,46 +1,34 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-
-const app = express();
+const dbParams = require("../lib/db");
 const router = express.Router();
-
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(
-//   cookieSession({
-//     name: "session",
-//     keys: ["key"],
-//     maxAge: 24 * 60 * 60 * 1000,
-//   })
-// );
 
 // GET requests
 
 // Renders Login page
-router.get("/", (req, res) => {
-  res.render("login");
-});
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    const templateVars = {
+      user: req.session.user_id,
+    };
+    res.render("login", templateVars);
+  });
+// POST route
+  router.post("/", (req, res) => {
+    const newUser = req.body;
+    // verifyEmail to check if it is already in the db
+    const emailQuery = `SELECT * FROM users WHERE email = $1`;
+    db.query(emailQuery, [newUser.email]).then((response) => {
+      if (!response.rows[0]) {
+        res.status(400).send("Invalid email");
+        return;
+      } else {
+        req.session.user_id = response.rows[0].name;
+        res.redirect("/");
+      }
+    });
+  });
 
-// router.get("/:id", (req, res) => {
-//   const id = req.params.id;
-//   console.log("id--------->", id);
-//   // req.session = null;
-//   // req.session.user_id = id;
-
-//   res.redirect("/passwords");
-// });
-
-router.post("/", (req, res) => {
-  const id = req.params.id;
-  console.log("id--------->", id);
-  res.redirect("/passwords");
-});
-
-// router.post('')
-
-// router.post("/", (req, res) => {
-//   // req.session.user_id = "Mei";
-//   res.redirect("/passwords");
-// });
-
-module.exports = router;
+  return router;
+};

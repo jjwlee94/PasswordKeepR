@@ -7,20 +7,21 @@ const cookieSession = require("cookie-session");
 const app = express();
 const router = express.Router();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  cookieSession({
-    name: "session",
-    keys: ["key"],
-    maxAge: 24 * 60 * 60 * 1000,
-  })
-);
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(
+//   cookieSession({
+//     name: "session",
+//     keys: ["key"],
+//     maxAge: 24 * 60 * 60 * 1000,
+//   })
+// );
 
 // GET requests
 
 // Renders Login page
 router.post("/", (req, res) => {
-  res.render("index");
+  req.session = null
+  res.redirect("/");
 });
 
 module.exports = router;
