@@ -97,14 +97,11 @@ body#password-create {
 
   .website-info {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .website-url {
-    margin-right: 9.5rem;
   }
 
   input#url {
