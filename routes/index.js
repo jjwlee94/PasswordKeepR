@@ -19,13 +19,13 @@ app.use(
 // Renders main page
 router.get("/", (req, res) => {
   res.render("index");
-  return router;
+ 
 });
 
 // Renders passwords page
 router.get("/passwords", (req, res) => {
+  console.log("testingggggg ----------->")
   res.render("password_all");
-  return router;
 });
 
 module.exports = router;

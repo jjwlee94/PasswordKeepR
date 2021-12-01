@@ -17,12 +17,16 @@ app.use(
 // GET requests
 
 // Renders Login page
-router.get("/", (req, res) => {
+
+router.get("/users/:id", (req, res) => {
+  const id = req.params.id
+  req.session.user_id = id;
   res.render("login");
 });
-
-router.post("/", (req, res) => {
-  res.redirect("/passwords");
-});
+             
+// router.post("/", (req, res) => {
+//   req.session.user_id = "Mei";
+//   res.render("/passwords");
+// });
 
 module.exports = router;
