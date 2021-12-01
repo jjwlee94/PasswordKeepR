@@ -7,6 +7,8 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -34,6 +36,14 @@ app.use(
 );
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["key"],
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -62,6 +72,7 @@ app.use("/passwords", passwordForOrganization(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
