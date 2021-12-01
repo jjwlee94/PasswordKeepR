@@ -57,31 +57,42 @@ $(document).ready(function () {
     return passwordCharacters.join("");
   };
 
-  // generatePassword();
+  const password = generatePassword(
+    passwordLength,
+    includeUppercase,
+    includeNumbers,
+    includeSymbols
+  );
+
+  console.log(password);
 
   // Function to display generated password on submit
-  form.addEventListener("submit", function () {
-    const passwordLength = passwordLengthNumber.value;
-    const includeUppercase = includeUppercaseElement.checked;
-    const includeNumbers = includeNumbersElement.checked;
-    const includeSymbols = includeSymbolsElement.checked;
-    const password = generatePassword(
-      passwordLength,
-      includeUppercase,
-      includeNumbers,
-      includeSymbols
-    );
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/password",
-    //   data: {
-    //     url: req.body.website_url,
-    //     username: req.body.website_username,
-    //     password: password,
-    //     category: req.body.category_id,
-    //   },
-    // });
-    // passwordDisplay.innerText = password;
-    console.log(password);
-  });
+  // form.addEventListener("submit", (e) => {
+  //   e.preventDefault(e);
+  //   const passwordLength = passwordLengthNumber.value;
+  //   const includeUppercase = includeUppercaseElement.checked;
+  //   const includeNumbers = includeNumbersElement.checked;
+  //   const includeSymbols = includeSymbolsElement.checked;
+  //   const password = generatePassword(
+  //     passwordLength,
+  //     includeUppercase,
+  //     includeNumbers,
+  //     includeSymbols
+  //   );
+  // $.ajax({
+  //   method: "POST",
+  //   url: "/password",
+  //   data: {
+  //     url: req.body.website_url,
+  //     username: req.body.website_username,
+  //     password: password,
+  //     category: req.body.category_id,
+  //   },
+  // }).then(function (response) {
+  // console.log("response from server is: ", response);
+  // });
+  // myInput.innerText = password;
+  // return password;
+  // console.log(password);
+  // });
 });
