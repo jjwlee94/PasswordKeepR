@@ -32,11 +32,10 @@ router.get("/:id", (req, res) => {
   res.redirect("/passwords");
 });
 
-// router.post('')
              
-// router.post("/", (req, res) => {
-//   // req.session.user_id = "Mei";
-//   res.redirect("/passwords");
-// });
+router.post("/", (req, res) => {
+  // req.session.user_id = "Mei";
+  res.redirect("/passwords");
+});
 
 module.exports = router;
