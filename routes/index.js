@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
+const { addPassword } = require("../db/helpers");
 
 const app = express();
 const router = express.Router();
@@ -14,9 +15,10 @@ app.use(
   })
 );
 
+module.exports = function (router, db) {};
 // GET requests
 
-// Renders main page
+// Renders homepage
 router.get("/", (req, res) => {
   res.render("index");
   return router;
@@ -25,6 +27,20 @@ router.get("/", (req, res) => {
 // Renders passwords page
 router.get("/passwords", (req, res) => {
   res.render("password_all");
+  return router;
+});
+
+// Renders updated passwords page
+router.post("/passwords", (req, res) => {
+  // const password = generatePassword();
+  const templateVars = {
+    url: req.body.website_url,
+    username: req.body.website_username,
+    password: "password",
+    category: req.body.category_id,
+  };
+
+  res.render("password_all", templateVars);
   return router;
 });
 

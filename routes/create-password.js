@@ -22,10 +22,4 @@ router.get("/", (req, res) => {
   return router;
 });
 
-// POST requests
-router.post("/", (req, res) => {
-  res.redirect("/passwords");
-  return router;
-});
-
 module.exports = router;
