@@ -17,7 +17,11 @@ app.use(
 
 // Renders homepage
 router.get("/", (req, res) => {
-  res.render("index");
+  const templateVars = {
+    user: req.session.user_id
+
+  }
+  res.render("index", templateVars);
 });
 
 // Renders passwords page

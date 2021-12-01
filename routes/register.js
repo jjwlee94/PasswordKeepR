@@ -3,7 +3,7 @@ const gh = require("../db/helpers");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
-const cookieSession = require("cookie-session");
+
 
 module.exports = (db) => {
   // Function to add a New user to the database
@@ -32,7 +32,10 @@ module.exports = (db) => {
 
   // GET ROUTE
   router.get("/", (req, res) => {
-    res.render("register");
+    const templateVars = {
+      user: req.session.user_id
+    }
+    res.render("register", templateVars);
   });
   // POST ROUTE
   router.post("/", (req, res) => {
@@ -56,6 +59,8 @@ module.exports = (db) => {
         }
         // Add New User to database
         addUser(newUser, db);
+        req.session.user_id =  newUser.email;
+
 
         res.redirect("/");
       });

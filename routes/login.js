@@ -18,7 +18,10 @@ const router = express.Router();
 
 // Renders Login page
 router.get("/", (req, res) => {
-  res.render("login");
+  const templateVars = {
+  user : req.session.user_id
+  }
+  res.render("login", templateVars);
 });
 
 // router.get("/:id", (req, res) => {

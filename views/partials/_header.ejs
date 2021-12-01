@@ -26,10 +26,24 @@
       </div>
     </div>
       <div class="collapse navbar-collapse justify-content-end"" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/register">Register</a>
-          <a class="nav-item nav-link" href="/login">Login</a>
-        </div>
+        <% if(!user){ %>
+          <div class="navbar-nav">
+
+            <a class="nav-item nav-link" href="/register">Register</a>
+            <a class="nav-item nav-link" href="/login">Login</a>
+          </div>
+            <% } else{ %>
+              <p>
+                <%= user %>
+                <form action="/logout" method="POST">
+                  <input type="submit" value="LOGOUT"/>
+                </form>
+              </p>
+              <% } %>
+
+
       </div>
+
   </nav>
+
 </header>
