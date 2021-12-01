@@ -9,6 +9,15 @@ body {
   }
 }
 
+body#login {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem;
+  }
+}
+
 body#index {
   display: flex;
   flex-direction: column;
