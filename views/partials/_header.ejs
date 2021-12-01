@@ -33,12 +33,15 @@
             <a class="nav-item nav-link" href="/login">Login</a>
           </div>
             <% } else{ %>
-              <p>
+              <div class="navbar-nav">
+              <p class= "username">
                 <%= user %>
-                <form action="/logout" method="POST">
-                  <input type="submit" value="LOGOUT"/>
-                </form>
+
               </p>
+              <form action="/logout" method="POST">
+                <input type="submit" value="LOGOUT"/>
+              </form>
+            </div>
               <% } %>
 
 

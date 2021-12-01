@@ -62,7 +62,7 @@ const passwordForOrganization = require("./routes/pass:ID");
 app.use("/api/users", usersRoutes(db));
 app.use("/", indexRouter);
 app.use("/register", registerRouter(db));
-app.use("/login", loginRouter);
+app.use("/login", loginRouter(db));
 app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
 app.use("/passwords", passwordForOrganization(db));
