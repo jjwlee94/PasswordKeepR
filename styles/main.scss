@@ -9,6 +9,20 @@ body {
   }
 }
 
+body#login {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9rem;
+  }
+  form.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 body#index {
   display: flex;
   flex-direction: column;
@@ -18,6 +32,7 @@ body#index {
     flex-direction: column;
     align-items: center;
     height: 100%;
+    margin-bottom: 5rem;
 
     h1 {
       font-size: 2em;
@@ -43,8 +58,7 @@ body#index {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      // border-style: solid;
-      padding: 1rem;
+      margin-bottom: 1rem;
       width: 100%;
     }
 
@@ -77,6 +91,7 @@ body#password-create {
     border-style: solid;
     padding: 2rem;
     margin-top: 5rem;
+    margin-bottom: 6.5rem;
     width: 50%;
   }
 
@@ -97,18 +112,19 @@ body#password-create {
 
   .website-info {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .website-url {
-    margin-right: 9.5rem;
+  input#website_url {
+    width: 150%;
   }
 
-  input#url {
-    width: 300px;
+  input#website_username {
+    width: 125%;
   }
 
   .categories {
@@ -183,6 +199,7 @@ body#password-create {
 
 footer {
   p {
+    width: 100%;
     margin-top: 0;
     margin-bottom: 1rem;
     margin-left: 1rem;

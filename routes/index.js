@@ -13,19 +13,35 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000,
   })
 );
-
 // GET requests
 
-// Renders main page
+// Renders homepage
 router.get("/", (req, res) => {
   res.render("index");
- 
 });
 
 // Renders passwords page
 router.get("/passwords", (req, res) => {
-  console.log("testingggggg ----------->")
-  res.render("password_all");
+  const templateVars = {
+    url: "url",
+    username: "username",
+    password: "password",
+    category: "category",
+  };
+  res.render("password_all", templateVars);
+  return router;
+});
+
+// Renders updated passwords page
+router.post("/passwords", (req, res) => {
+  const templateVars = {
+    url: req.body.website_url,
+    username: req.body.website_username,
+    password: "password",
+    category: req.body.category_id,
+  };
+  res.render("password_all", templateVars);
+  return router;
 });
 
 module.exports = router;

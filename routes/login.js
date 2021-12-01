@@ -16,26 +16,25 @@ const router = express.Router();
 
 // GET requests
 
-
-
 // Renders Login page
-router.get("/", (req,res)=>{
-  res.render('login')
-})
-
-router.get("/:id", (req, res) => {
-  const id = req.params.id
-  console.log("id--------->",id)
-  // req.session = null;
-  // req.session.user_id = id;
-
-  res.redirect("/passwords");
+router.get("/", (req, res) => {
+  res.render("login");
 });
 
-             
+// router.get("/:id", (req, res) => {
+//   const id = req.params.id;
+//   console.log("id--------->", id);
+//   // req.session = null;
+//   // req.session.user_id = id;
+
+//   res.redirect("/passwords");
+// });
+
 router.post("/", (req, res) => {
-  // req.session.user_id = "Mei";
+  const id = req.params.id;
+  console.log("id--------->", id);
   res.redirect("/passwords");
 });
+
 
 module.exports = router;

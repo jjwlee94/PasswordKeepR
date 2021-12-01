@@ -1,4 +1,5 @@
 const { Pool } = require("pg");
+
 module.exports = (db) => {
   const addUser = function (users, db) {
     const queryString = `
@@ -45,6 +46,29 @@ module.exports = (db) => {
     });
   };
 
+  // const addPassword = function (passwords, db) {
+  //   const queryString = `
+  //   INSERT INTO passwords (user_id, website_url, website_username, website_password, category_id, organization_id)
+  //   VALUES ($1, $2, $3, $4, $5, $6)
+  //   RETURNING *;
+  //   `;
+
+  //   const queryParams = [
+  //     password.user_id,
+  //     passwords.website_url,
+  //     passwords.website_username,
+  //     passwords.website_password,
+  //     passwords.category_id,
+  //     passwords.organization_id,
+  //   ];
+
+  //   return db.query(queryString, queryParams).then((res) => {
+  //     return res.rows[0].catch((err) => {
+  //       console.log(err);
+  //     });
+  //   });
+  // };
+
   module.exports = {
     getUserByEmail,
     users,
@@ -52,5 +76,6 @@ module.exports = (db) => {
     verifyRegisterInfo,
     verifyEmail,
     addUser,
+    // addPassword,
   };
 };
