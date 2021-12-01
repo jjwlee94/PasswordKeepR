@@ -5,8 +5,8 @@ $(document).ready(function () {
   const includeUppercaseElement = document.getElementById("includeUppercase");
   const includeNumbersElement = document.getElementById("includeNumbers");
   const includeSymbolsElement = document.getElementById("includeSymbols");
-  const form = document.getElementById("passwordGeneratorForm");
-  // const passwordDisplay = document.getElementById("passwordDisplay");
+  const generateButton = document.getElementById("generate");
+  const passwordDisplay = document.getElementById("passwordDisplay");
 
   // Synchronize range and number-input values on input
   passwordLengthNumber.addEventListener("input", syncPasswordLength);
@@ -57,42 +57,36 @@ $(document).ready(function () {
     return passwordCharacters.join("");
   };
 
-  const password = generatePassword(
-    passwordLength,
-    includeUppercase,
-    includeNumbers,
-    includeSymbols
-  );
-
-  console.log(password);
+  // const password = generatePassword();
+  // console.log(password);
 
   // Function to display generated password on submit
-  // form.addEventListener("submit", (e) => {
-  //   e.preventDefault(e);
-  //   const passwordLength = passwordLengthNumber.value;
-  //   const includeUppercase = includeUppercaseElement.checked;
-  //   const includeNumbers = includeNumbersElement.checked;
-  //   const includeSymbols = includeSymbolsElement.checked;
-  //   const password = generatePassword(
-  //     passwordLength,
-  //     includeUppercase,
-  //     includeNumbers,
-  //     includeSymbols
-  //   );
-  // $.ajax({
-  //   method: "POST",
-  //   url: "/password",
-  //   data: {
-  //     url: req.body.website_url,
-  //     username: req.body.website_username,
-  //     password: password,
-  //     category: req.body.category_id,
-  //   },
-  // }).then(function (response) {
-  // console.log("response from server is: ", response);
-  // });
-  // myInput.innerText = password;
-  // return password;
-  // console.log(password);
-  // });
+  generateButton.addEventListener("click", function () {
+    // e.preventDefault(e);
+    const passwordLength = passwordLengthNumber.value;
+    const includeUppercase = includeUppercaseElement.checked;
+    const includeNumbers = includeNumbersElement.checked;
+    const includeSymbols = includeSymbolsElement.checked;
+    const password = generatePassword(
+      passwordLength,
+      includeUppercase,
+      includeNumbers,
+      includeSymbols
+    );
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/password",
+    //   data: {
+    //     url: req.body.website_url,
+    //     username: req.body.website_username,
+    //     password: password,
+    //     category: req.body.category_id,
+    //   },
+    // }).then(function (response) {
+    // console.log("response from server is: ", response);
+    // });
+    passwordDisplay.innerText = password;
+    console.log(password);
+    return password;
+  });
 });
