@@ -18,9 +18,8 @@ app.use(
 // Renders homepage
 router.get("/", (req, res) => {
   const templateVars = {
-    user: req.session.user_id
-
-  }
+    user: req.session.user_id,
+  };
   res.render("index", templateVars);
 });
 
@@ -28,10 +27,10 @@ router.get("/", (req, res) => {
 router.get("/passwords", (req, res) => {
   const templateVars = {
     user: req.session.user_id,
-    url: "url",
-    username: "username",
-    password: "password",
-    category: "category",
+    url: req.body.website_url,
+    username: req.body.website_username,
+    password: req.body.password,
+    category: req.body.category_id,
   };
   res.render("password_all", templateVars);
   return router;
@@ -39,11 +38,20 @@ router.get("/passwords", (req, res) => {
 
 // Renders updated passwords page
 router.post("/passwords", (req, res) => {
+  console.log("=== req.body", req.body);
+  // db.createPassword({ ...req.body, user: req.session.user_id })
+  //   .then((password) => {
+  //     res.send(password);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.send(err);
+  //   });
   const templateVars = {
-    user : req.session.user_id,
+    user: req.session.user_id,
     url: req.body.website_url,
     username: req.body.website_username,
-    password: "password",
+    password: req.body.password,
     category: req.body.category_id,
   };
   res.render("password_all", templateVars);
