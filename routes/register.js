@@ -10,7 +10,7 @@ module.exports = (db) => {
     const queryString = `
     INSERT INTO users (name, email, password, organization_id, admin)
     VALUES ($1, $2, $3, $4, $5)
-    RETURNING *;`;
+    RETURNING *;`
 
     const values = [
       users.name,
@@ -58,7 +58,7 @@ module.exports = (db) => {
         }
         // Add New User to database
         addUser(newUser, db);
-        req.session.user_id = newUser.name;
+        req.session.user_id = newUser.id;
 
         res.redirect("/");
       });
