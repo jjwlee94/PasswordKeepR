@@ -17,31 +17,30 @@ app.use(
 
 // Renders homepage
 router.get("/", (req, res) => {
-  res.render("index");
+  const templateVars = {
+    user: req.session.user_id
+
+  }
+  res.render("index", templateVars);
 });
 
 // Renders passwords page
 router.get("/passwords", (req, res) => {
-  getUserWithId("1")
-  .then((result) => {
-
-    const templateVars = {
-      url: "url",
-      username: "username",
-      password: "password",
-      category: "category",
-    };
-  return templateVars
-  })
-    .then((templateVars)=>{
-     return res.render("password_all", templateVars);
-    })
+  const templateVars = {
+    user: req.session.user_id,
+    url: "url",
+    username: "username",
+    password: "password",
+    category: "category",
+  };
+  res.render("password_all", templateVars);
   return router;
 });
 
 // Renders updated passwords page
 router.post("/passwords", (req, res) => {
   const templateVars = {
+    user : req.session.user_id,
     url: req.body.website_url,
     username: req.body.website_username,
     password: "password",
