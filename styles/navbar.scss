@@ -21,4 +21,11 @@ header {
     font-family: "Nanum Gothic", sans-serif;
     padding-right: 0.8em;
   }
+
+  h6.username {
+    font-family: "Open Sans Condensed", sans-serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
 }

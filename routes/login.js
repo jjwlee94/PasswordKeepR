@@ -24,7 +24,9 @@ module.exports = (db) => {
         res.status(400).send("Invalid email");
         return;
       } else {
-        req.session.user_id = response.rows[0].name;
+        req.session.user_id = response.rows[0].id;
+        req.session.username = response.rows[0].name
+        console.log(response.rows[0])
         res.redirect("/");
       }
     });

@@ -73,20 +73,7 @@ $(document).ready(function () {
       includeNumbers,
       includeSymbols
     );
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/password",
-    //   data: {
-    //     url: req.body.website_url,
-    //     username: req.body.website_username,
-    //     password: password,
-    //     category: req.body.category_id,
-    //   },
-    // }).then(function (response) {
-    // console.log("response from server is: ", response);
-    // });
     passwordDisplay.innerText = password;
-    console.log(password);
-    return password;
+    $("#password").val(password);
   });
 });

@@ -19,8 +19,8 @@ app.use(
 // Renders Create New Password page
 router.get("/", (req, res) => {
   const templateVars = {
-    user : req.session.user_id
-  }
+    user: req.session.user_id,
+  };
   res.render("password_create", templateVars);
   return router;
 });
