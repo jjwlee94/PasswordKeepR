@@ -1,19 +1,18 @@
 INSERT INTO passwords (website_url, website_username, website_password,user_id, category_id, organization_id) VALUES
-('https://www.youtube.com/', 'github@youtube.com','sAqW(9B@jO',1,3,1 ),
-('https://www.facebook.com/', 'github@facebook.com','B%wD>~WPt',1,1,1 ),
-('https://www.linkedin.com/', 'github@linkedin.com','6~:u}EfEIT{+(FUe',1,2,1 ),
-('https://www.twitter.com/', 'github@twitter.com','ZC}DL6KWD8ztk-@E#,1i',1,3,1 ),
-('https://www.reddit.com/', 'github@reddit.com','HznTqwGLAuLENaJ',1,3,1 ),
-('https://www.tdcanadatrust.com/', 'github@td.com','pre7gbivrs9xenh',1,2,1 ),
-('https://www.staples.ca/', 'github@staples.ca','86lM9kk9',1,2,1),
-('https://wealthsimple.com/', 'github@wealthsimple.com','<CtN$!2M',1,3,1),
+('www.linkedin.com', 'labber@linkedin.com','6~:u}EfEIT{+(FUe',1,2,1 ),
+('www.careerbuilder.com', 'labber@careerbuilder.com','pre7gbivrs9xenh',1,2,1),
+('www.twitter.com', 'jperalta@twitter.com','ZC}DL6KWD8ztk-@E#,1i',1,1,1 ),
 
 
-('https://www.youtube.com/', 'github@youtube.com','sAqW(9B@jO',2,3,1 ),
-('https://www.facebook.com/', 'github@facebook.com','B%wD>~WPt',2,1,1 ),
-('https://www.linkedin.com/', 'github@linkedin.com','6~:u}EfEIT{+(FUe',2,2,1 ),
-('https://www.twitter.com/', 'github@twitter.com','ZC}DL6KWD8ztk-@E#,1i',2,3,1 ),
-('https://www.reddit.com/', 'github@reddit.com','HznTqwGLAuLENaJ',2,3,1 ),
-('https://www.tdcanadatrust.com/', 'github@td.com','pre7gbivrs9xenh',2,2,1 ),
-('https://www.staples.ca/', 'github@staples.ca','86lM9kk9',2,2,1),
-('https://wealthsimple.com/', 'github@wealthsimple.com','<CtN$!2M',2,3,1);
+('www.youtube.com', 'labber@youtube.com','sAqW(9B@jO',2,3,1),
+('www.linkedin.com', 'labber@linkedin.com','6~:u}EfEIT{+(FUe',2,2,1 ),
+('www.tdcanadatrust.com', 'labber@td.com','pre7gbivrs9xenh',2,2,1 ),
+('www.facebook.com', 'labber@facebook.com','B%wD>~WPt',2,1,1 ),
+
+
+
+
+('www.reddit.com', 'facebookuser@reddit.com','HznTqwGLAuLENaJ',3,3,2 ),
+('www.staples.ca', 'facebookuser@staples.ca','86lM9kk9',3,2,2),
+('www.glassdoor.ca', 'facebookuser@glassdoor.ca','lM<CtN$!2M9kk9',3,2,2),
+('wealthsimple.com', 'facebookuser@wealthsimple.com','<CtN$!2M',3,3,2);
