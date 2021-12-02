@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-const {getUserWithId} =  require("../db/helpers");
+const { getUserWithId } = require("../db/helpers");
 const app = express();
 const router = express.Router();
 

@@ -25,10 +25,4 @@ router.get("/", (req, res) => {
   return router;
 });
 
-router.post("/", (req, res) => {
-  console.log("it's here");
-  res.redirect("/passwords");
-  return router;
-});
-
 module.exports = router;
