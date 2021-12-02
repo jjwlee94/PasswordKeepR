@@ -35,16 +35,16 @@ module.exports = (db) => {
       });
   };
 
-  const verifyEmail = function (newUser, databaseEmailsArray) {
-    for (let item of databaseEmailsArray) {
-      if (item.email === newUser.email) {
-        return true;
-      } else {
-        console.log("im hanging");
-        return false;
-      }
-    }
-  };
+  // const verifyEmail = function (newUser, databaseEmailsArray) {
+  //   for (let item of databaseEmailsArray) {
+  //     if (item.email === newUser.email) {
+  //       return true;
+  //     } else {
+  //       console.log("im hanging");
+  //       return false;
+  //     }
+  //   }
+  // };
 
   const users = function (db) {
     const queryString = `

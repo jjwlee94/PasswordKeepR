@@ -15,6 +15,7 @@ const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
+module.exports = db;
 console.log("connected to the db");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
