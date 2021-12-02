@@ -1,5 +1,5 @@
 INSERT INTO passwords (id, website_url, website_username, website_password,user_id, category_id, organization_id) VALUES
-(17,'https://www.youtube.com/', 'github@youtube.com','password',1,3,1 ),
+(1,'https://www.youtube.com/', 'github@youtube.com','password',1,3,1 ),
 (2,'https://www.facebook.com/', 'github@facebook.com','password',1,1,1 ),
 (3,'https://www.linkedin.com/', 'github@linkedin.com','password',1,2,1 ),
 (4,'https://www.twitter.com/', 'github@twitter.com','password',1,3,1 ),

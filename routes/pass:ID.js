@@ -28,6 +28,9 @@ module.exports = (db) => {
           rows: data,
         };
         console.log("rows", templateVars);
+        console.log(req.session.user_id);
+        // console.log(db);
+        // console.log(data);
         res.render("password_all", templateVars);
       })
       .catch((err) => {
