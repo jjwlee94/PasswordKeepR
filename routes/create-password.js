@@ -20,7 +20,10 @@ app.use(
 router.get("/", (req, res) => {
   const templateVars = {
     user : req.session.user_id
+
   }
+
+
   res.render("password_create", templateVars);
   return router;
 });

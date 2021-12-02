@@ -21,21 +21,22 @@ router.get("/", (req, res) => {
     user: req.session.user_id
 
   }
+
   res.render("index", templateVars);
 });
 
 // Renders passwords page
-router.get("/passwords", (req, res) => {
-  const templateVars = {
-    user: req.session.user_id,
-    url: "url",
-    username: "username",
-    password: "password",
-    category: "category",
-  };
-  res.render("password_all", templateVars);
-  return router;
-});
+// router.get("/passwords", (req, res) => {
+//   const templateVars = {
+//     user: req.session.user_id,
+//     url: "url",
+//     username: "username",
+//     password: "password",
+//     category: "category",
+//   };
+//   res.render("password_all", templateVars);
+//   return router;
+// });
 
 // Renders updated passwords page
 router.post("/passwords", (req, res) => {
