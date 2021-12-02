@@ -7,6 +7,8 @@ INSERT INTO passwords (website_url, website_username, website_password, user_id,
 ('https://www.tdcanadatrust.com/', 'github@td.com','pre7gbivrs9xenh',1,2,1 ),
 ('https://www.staples.ca/', 'github@staples.ca','86lM9kk9',1,2,1),
 ('https://wealthsimple.com/', 'github@wealthsimple.com','<CtN$!2M',1,3,1),
+
+
 ('https://www.youtube.com/', 'github@youtube.com','sAqW(9B@jO',2,3,1 ),
 ('https://www.facebook.com/', 'github@facebook.com','B%wD>~WPt',2,1,1 ),
 ('https://www.linkedin.com/', 'github@linkedin.com','6~:u}EfEIT{+(FUe',2,2,1 ),

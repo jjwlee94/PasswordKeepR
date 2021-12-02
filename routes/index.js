@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
 //     user: req.session.user_id,
 //     url: req.body.website_url,
 //     username: req.body.website_username,
-//     password: req.body.password,
+//     password: "password",
 //     category: req.body.category_id,
 //   };
 //   res.render("password_all", templateVars);
