@@ -54,7 +54,7 @@ const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout");
 const createPasswordRouter = require("./routes/create-password");
 const passwordForOrganization = require("./routes/pass:ID");
-const savePasswordRouter = require("./routes/save-password");
+const passwordSave = require("./routes/save-password");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -65,7 +65,7 @@ app.use("/login", loginRouter(db));
 app.use("/logout", logoutRouter);
 app.use("/passwords/create", createPasswordRouter);
 app.use("/passwords", passwordForOrganization(db));
-app.use("/passwords/save", savePasswordRouter);
+app.use("/passwords/save", passwordSave(db));
 
 // Note: mount other resources here, using the same pattern above
 

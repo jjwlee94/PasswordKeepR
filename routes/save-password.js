@@ -1,57 +1,58 @@
 const express = require("express");
-// const bodyParser = require("body-parser");
-// const cookieSession = require("cookie-session");
-
-const app = express();
 const router = express.Router();
-
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(
-//   cookieSession({
-//     name: "session",
-//     keys: ["key"],
-//     maxAge: 24 * 60 * 60 * 1000,
-//   })
-// );
+const bcrypt = require("bcrypt");
+const bodyParser = require("body-parser");
 
 // router.post("/", (req, res) => {
-//   console.log("it's here");
-//   res.redirect("/passwords");
-//   return router;
+//   console.log(req.session["user_id"]);
+//   res.send("HEllo");
 // });
-// const password = req.body.password;
-const queryString = `
-    INSERT INTO passwords (user_id, website_url, website_username, website_password, category_id)
-    VALUES ($1, $2, $3, $4, $5);
-    `;
-
-const createPassword = function (db, queryString, queryParams) {
-  return db
-    .query(queryString, queryParams)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
 
 module.exports = (db) => {
+  // Function to add a New user to the database
+
+  // POST ROUTE
   router.post("/", (req, res) => {
-    const id = req.session["user_id"];
-    const queryParams = [
-      id,
-      req.body.website_url,
-      req.body.website_username,
-      req.body.password,
-      req.body.category_id,
-    ];
-    createPassword(db, queryString, queryParams).then(() => {
+    console.log(req.body);
+
+    category_id = 0;
+
+    switch (req.body.category_id) {
+      case "social":
+        category_id = 1;
+        break;
+      case "work":
+        category_id = 2;
+      case "entertainment":
+        category_id = 3;
+    }
+
+    const savePassword = function () {
+      const queryString = `
+        INSERT INTO passwords (user_id, website_url, website_username, category_id, website_password)
+        VALUES ($1, $2, $3, $4, $5)
+        RETURNING *;`;
+
+      const values = [
+        req.session["user_id"],
+        req.body.website_url,
+        req.body.website_username,
+        category_id,
+        req.body.password,
+      ];
+      return db
+        .query(queryString, values)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          return console.log("query error:", err);
+        });
+    };
+
+    savePassword().then(() => {
       res.redirect("/passwords");
     });
-
-    console.log("it's at the end");
   });
   return router;
 };
-// module.exports = router;
