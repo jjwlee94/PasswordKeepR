@@ -4,7 +4,7 @@ const getEmailUserPass = (user_id, db) => {
   return db
     .query(
       `
-      SELECT website_url, website_username, website_password, categories.category_name AS category
+      SELECT passwords.id, website_url, website_username, website_password, categories.category_name AS category
       FROM passwords
       JOIN categories ON categories.id = category_id
       WHERE user_id = $1

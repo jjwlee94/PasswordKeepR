@@ -1,15 +1,13 @@
-$(document).ready(function () {
-  const paragraph = document.getElementById("password");
-  const edit_button = document.getElementById("edit-button");
-  const save_button = document.getElementById("save-button");
+// Functions to edit and save the new password
 
-  edit_button.addEventListener("click", function () {
-    paragraph.contentEditable = true;
-    paragraph.style.backgroundColor = "#dddbdb";
-  });
+const editText = function (element) {
+  const paragraph = document.getElementById(`password-${element}`);
+  paragraph.contentEditable = true;
+  paragraph.style.backgroundColor = "#dddbdb";
+};
 
-  save_button.addEventListener("click", function () {
-    paragraph.contentEditable = false;
-    paragraph.style.backgroundColor = "transparent";
-  });
-});
+const saveText = function (element) {
+  const paragraph = document.getElementById(`password-${element}`);
+  paragraph.contentEditable = false;
+  paragraph.style.backgroundColor = "transparent";
+};
