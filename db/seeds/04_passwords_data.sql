@@ -4,10 +4,11 @@ INSERT INTO passwords (website_url, website_username, website_password,user_id, 
 ('www.twitter.com', 'jperalta@twitter.com','ZC}DL6KWD8ztk-@E#,1i',1,1,1 ),
 
 
-('www.youtube.com', 'labber@youtube.com','sAqW(9B@jO',2,3,1),
-('www.linkedin.com', 'labber@linkedin.com','6~:u}EfEIT{+(FUe',2,2,1 ),
-('www.tdcanadatrust.com', 'labber@td.com','pre7gbivrs9xenh',2,2,1 ),
-('www.facebook.com', 'labber@facebook.com','B%wD>~WPt',2,1,1 ),
+('www.youtube.com', 'nypd99@youtube.com','sAqW(9B@jO',2,3,1),
+('www.linkedin.com', 'nypd99@linkedin.com','6~:u}EfEIT{+(FUe',2,2,1 ),
+('www.tdcanadatrust.com', 'k.cozner@td.com','pre7gbivrs9xenh',2,2,1 ),
+('www.twitter.com', 'velvet.thunder@twitter.com','ZC}DdfhsdD8ztk-@E#,1i',2,1,1 ),
+('www.facebook.com', 'raymondholt@facebook.com','B%wD>~WPt',2,1,1 ),
 
 
 

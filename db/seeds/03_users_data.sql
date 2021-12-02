@@ -1,7 +1,7 @@
 INSERT INTO users (name, email, password, organization_id, admin) VALUES
 ('Jake Peralta','coolcoolcool@gmail.com','password',1, false),
 
-('Andre Holt','cheddar@nypd99.com','password',1, true),
+('Raymond Holt','cheddar@nypd99.com','password',1, true),
 
 ('Amy Santiago','hallmonitor@yahoo.com','password',2, false),
 
