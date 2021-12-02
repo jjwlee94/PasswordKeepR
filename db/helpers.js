@@ -1,5 +1,4 @@
 const { Pool } = require("pg");
-const db = require("../server");
 
 module.exports = (db) => {
   const verifyEmail = function (email) {
@@ -36,16 +35,16 @@ module.exports = (db) => {
       });
   };
 
-  const verifyEmail = function (newUser, databaseEmailsArray) {
-    for (let item of databaseEmailsArray) {
-      if (item.email === newUser.email) {
-        return true;
-      } else {
-        console.log("im hanging");
-        return false;
-      }
-    }
-  };
+  // const verifyEmail = function (newUser, databaseEmailsArray) {
+  //   for (let item of databaseEmailsArray) {
+  //     if (item.email === newUser.email) {
+  //       return true;
+  //     } else {
+  //       console.log("im hanging");
+  //       return false;
+  //     }
+  //   }
+  // };
 
   const users = function (db) {
     const queryString = `
@@ -59,10 +58,10 @@ module.exports = (db) => {
   };
 
   module.exports = {
-    // getUserByEmail,
+    getUserByEmail,
     users,
-    // createUserAccount,
-    // verifyRegisterInfo,
+    createUserAccount,
+    verifyRegisterInfo,
     verifyEmail,
     addUser,
   };
