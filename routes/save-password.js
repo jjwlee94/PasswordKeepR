@@ -23,6 +23,7 @@ module.exports = (db) => {
         break;
       case "work":
         category_id = 2;
+        break;
       case "entertainment":
         category_id = 3;
     }
