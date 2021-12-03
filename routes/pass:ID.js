@@ -3,7 +3,14 @@ const router = express.Router();
 const getEmailUserPass = (user_id, db) => {
   return db
     .query(
-      `SELECT website_url,website_username, website_password FROM passwords WHERE user_id =$1`,
+      `
+      SELECT website_url, website_username, website_password, categories.category_name AS category
+      FROM passwords
+      JOIN categories ON categories.id = category_id
+      WHERE user_id = $1
+      ORDER BY category;
+      `,
+
       [user_id]
     )
     .then((result) => {
