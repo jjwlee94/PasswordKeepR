@@ -14,7 +14,7 @@ module.exports = (db) => {
     };
     res.render("login", templateVars);
   });
-// POST route
+  // POST route
   router.post("/", (req, res) => {
     const newUser = req.body;
     // verifyEmail to check if it is already in the db
@@ -25,9 +25,9 @@ module.exports = (db) => {
         return;
       } else {
         req.session.user_id = response.rows[0].id;
-        req.session.username = response.rows[0].name
-        console.log(response.rows[0])
-        res.redirect("/");
+        req.session.username = response.rows[0].name;
+        console.log(response.rows[0]);
+        res.redirect("/passwords");
       }
     });
   });

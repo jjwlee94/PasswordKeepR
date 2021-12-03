@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
-const {getUserWithId} =  require("../db/helpers");
+const { getUserWithId } = require("../db/helpers");
 const app = express();
 const router = express.Router();
 
@@ -25,16 +25,16 @@ router.get("/", (req, res) => {
 });
 
 // Renders updated passwords page
-router.post("/passwords", (req, res) => {
-  const templateVars = {
-    user: req.session.user_id,
-    url: req.body.website_url,
-    username: req.body.website_username,
-    password: "password",
-    category: req.body.category_id,
-  };
-  res.render("password_all", templateVars);
-  return router;
-});
+// router.post("/passwords", (req, res) => {
+//   const templateVars = {
+//     user: req.session.user_id,
+//     url: req.body.website_url,
+//     username: req.body.website_username,
+//     password: "password",
+//     category: req.body.category_id,
+//   };
+//   res.render("password_all", templateVars);
+//   return router;
+// });
 
 module.exports = router;

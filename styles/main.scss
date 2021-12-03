@@ -8,6 +8,11 @@ body {
     justify-content: center;
   }
 }
+h3 {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
 
 body#login {
   .container {
@@ -58,7 +63,7 @@ body#index {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 5rem;
       width: 100%;
     }
 
