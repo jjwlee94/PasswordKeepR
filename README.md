@@ -1,8 +1,8 @@
 # PasswordKeepR
 
-## Final Product
-
 PasswordKeepR is a tool for organizations to easily and securely share passwords among its employees.
+
+## Final Product
 
 ### Landing Page
 
