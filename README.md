@@ -51,3 +51,7 @@ PasswordKeepR is a tool for organizations to easily and securely share passwords
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+
+## Contributors
+
+[Jeewon Lee](https://github.com/jjwlee94), [Mei Nghiem-Lin](https://github.com/MCNLin), [Mahir Ahmed](https://github.com/mahir45)
