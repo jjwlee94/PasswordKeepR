@@ -2,11 +2,19 @@
 
 ## Final Product
 
+PasswordKeepR is a tool for organizations to easily and securely share passwords among its employees.
+
 ### Landing Page
+
+[Landing Page](https://github.com/jjwlee94/PasswordKeepR/blob/master/docs/homepage.gif)
+
+### Generating a random password and saving it to the user's database
+
+[Create Password](https://github.com/jjwlee94/PasswordKeepR/blob/master/docs/create-password.gif)
 
 ### Copying, editing, and saving a user's password
 
-### Generating a random password and saving it to the user's database
+[Copy Edit and Save](https://github.com/jjwlee94/PasswordKeepR/blob/master/docs/copy-edit-save-function.gif)
 
 ## Getting Started
 
